@@ -1,0 +1,10 @@
+name: get metadata
+on: issue_comment
+jobs:   
+    output-info:
+        runs-on: ubuntu-latest
+        steps:
+        - name: output metadata
+          run: |
+             echo "The issue number is ${{ github.event.issue.number }} and the comment is ${{ github.event.comment.body }}"
+             echo "${{toJson(github.event)}}"
